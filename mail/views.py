@@ -9,7 +9,7 @@ def send_mail(request, uid):
         mail = Mail.objects.filter(uid=uid)
         if mail.exists():
             mail = mail[0]
-            data = request.POST
+            data = request.GET
             res = send_email(mail.email, data)
             
             return JsonResponse({
