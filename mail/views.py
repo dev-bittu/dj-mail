@@ -5,11 +5,11 @@ from django.http import JsonResponse
 
 # Create your views here.
 def send_mail(request, uid):
-    if request.method == "GET":
+    if request.method == "POST":
         mail = Mail.objects.filter(uid=uid)
         if mail.exists():
             mail = mail[0]
-            data = request.GET
+            data = request.POST
             res = send_email(mail.email, data)
             
             return JsonResponse({
