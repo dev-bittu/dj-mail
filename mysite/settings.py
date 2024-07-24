@@ -26,7 +26,7 @@ SECRET_KEY = env.get('SECRET_KEY', 'mysitedevenv')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.get('DEBUG', True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.get('ALLOWED_HOSTS', [])
 
 
 # Application definition
